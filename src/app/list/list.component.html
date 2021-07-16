@@ -1,0 +1,16 @@
+<h1>list product</h1>
+<a routerLink="/create">Create new product</a>
+<table>
+  <tr>
+    <td>Name</td>
+    <td>Description</td>
+    <td colspan="2">Action</td>
+  </tr>
+  <tr *ngFor="let p of products">
+    <td>{{p.name}}</td>
+    <td>{{p.description}}</td>
+    <td><a routerLink="edit/{{p.id}}">Edit</a></td>
+    <td><a routerLink="delete/{{p.id}}">Delete</a></td>
+    <td><button type="button" (click)="delete(p.id)">Delete</button></td>
+  </tr>
+</table>
